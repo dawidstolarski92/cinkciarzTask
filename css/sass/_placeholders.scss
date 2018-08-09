@@ -1,0 +1,198 @@
+@import 'variables';
+@import 'mixins'; 
+
+// SET UP FONTS WHICH ARE USED IN PROJECT 
+
+        %fontRegular {
+            font-family: $font;
+            font-weight: 400;
+        }
+
+        %fontLight {
+            font-family: $font;
+            font-weight: 200;
+        }
+
+        %fontMedium {
+            font-family: $font;
+            font-weight: 600;
+        }
+
+// SET UP THE FONT SIZES WHICH ARE USED IN PROJECT
+
+        %fontParagraphSize {
+            font-size: 14px;
+        }
+        %fontSmallSize {
+            font-size: 16px;
+        }
+        %fontNormalSize {
+            font-size: 18px;
+        }
+        %fontMediumSize {
+            font-size: 24px;
+        }
+        %fontBigSize {
+            font-size: 28px;
+        }
+        %fontLargeSize {
+            font-size: 44px;
+        }
+
+// LIGHT FONT RE-USABLE PLACEHOLDER
+
+        %fontLightSmall {
+            @extend %fontLight;
+            @extend %fontSmallSize;
+        }
+
+// MEDIUM FONT RE-USABLE PLACEHOLDER
+
+        %fontMediumSmall {
+            @extend %fontMedium;
+            @extend %fontSmallSize;
+        }
+
+// REGULAR FONT RE-USABLE PLACEHOLDER
+
+        %fontRegularSmall {
+            @extend %fontRegular;
+            @extend %fontSmallSize;
+        }
+        %fontRegularNormal {
+            @extend %fontRegular;
+            @extend %fontNormalSize;
+        }
+        %fontRegularBig {
+            @extend %fontRegular;
+            @extend %fontBigSize;
+        }
+        %fontRegularWithPadding {
+            @extend %fontRegular;
+            padding-bottom: 20px;
+        }
+
+// CUSTOM PLACEHOLDERS MADE FROM RE-USABLE ONES 
+
+        %fontMediumNewsLink {
+            @extend %fontMedium;
+            @extend %fontMediumSize;
+            color: $orange;
+        }
+
+        %fontParagraph {
+            @extend %fontRegular;
+            @extend %fontParagraphSize;
+            line-height: 16px;
+            color: $paraGray;
+        }
+
+
+        %sectionHeadings {
+            @extend %fontRegularWithPadding;
+            @extend %fontLargeSize;
+        }
+        %clientName {
+            @extend %fontRegular;
+            @extend %fontMediumSize;
+            color: $orange;
+        }
+        %sectionH4 {
+            @extend %fontRegularWithPadding;
+            @extend %fontMediumSize;
+        }
+        %itemHeading {
+            @extend %fontRegularBig;
+            color: $gray;
+            padding-bottom: 20px;
+        }
+
+
+// OVERLAY'S PLACEHOLDER WHICH CAN BE USED ANYWHERE WE WANT TO PUT OVERLAY ON       
+
+        %overlayOfElement {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+// MOBILE MENU OPENED PLACEHOLDER
+        %menuOpened { 
+            @include respond-to(mobile-tablet) { 
+                background: rgba(0,0,0,0.8);
+                z-index:  9;
+                position:  absolute;
+                width:  100%;
+                left: 50%;
+                top: $seventy - 1;
+                transform: translate(-50%);
+                margin:  $reset;
+                padding: $reset 15px;
+             };
+        }
+
+
+// PLACEHOLDER MADE FOR INNER MARGIN AND BOX SHADOW USED IN ALL SECTIONS 
+
+        %sectionStyle {
+            @include boxshadow($sectionBoxShadow);
+            padding: 64px 0px; 
+        }
+
+
+// PROMO SECTION PLACEHOLDERS 
+
+        %prmomoHeading { 
+            @extend %fontRegular;
+
+        }
+        %promoItem {
+            padding: 15px;
+            @include promoItemColors();
+                    i { font-size: 56px; }
+                    h1.promoItemHead { 
+                        @extend %itemHeading; 
+                        font-size: 28px; }
+                    .blockInner {
+                                @include boxshadow($promoItemShadow);
+                                padding: 18px; // I used 18px instead of 20px because of colapsing to two lines in 1024px width view.
+                            }
+        }
+
+// NEWS SECTION 
+
+        %viewMaxTabletCenter {
+            text-shadow: $newsHeadingShadow;
+            @include respond-to(mobile-tablet) { text-align: center }; 
+        }
+
+
+// CLIENTS SECTION 
+
+        %clientIcon {
+            color: $superLightGray;
+            padding-bottom: 30px;
+            font-size: 165px;
+        }
+
+// OTHER PLACEHOLDERS
+
+%centerTransform { 
+    position:  relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+%verticalCenter {    
+        transform: translateY(-50%);
+        top: 50%;
+        position:  relative;
+}
+
+%carouselControls {
+    font-size: 44px;
+    color: $white;
+}

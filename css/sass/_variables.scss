@@ -1,0 +1,50 @@
+// Set up the breakpoints
+    $break-small: 767px;
+    $break-tablet: 991px;
+
+// Set up the font-family for whole website
+    $font: 'Ubuntu'; 
+
+// Add resetting var
+    $reset: 0;
+
+// PIXELS VARS
+
+    $zero: 0px;
+    $ten: 10px;
+    $seventy: 70px;
+
+// COLORS 
+
+    $white: #fff;
+    $almostWhite: #eee;
+    $black: #000;
+
+        //SHADES OF GRAY
+            $superLightGray: #999;
+            $paraGray: #888;
+            $lightGray: #777;
+            $gray: #666;
+            $spaceGray: #444;
+
+        // NORMAL COLORS
+            $orange: #f80;
+            $limeGreen: #0f9;
+            $red: #f00;
+
+        // COLORS WITH OPACITY
+            $whiteOpacity30: rgba(255, 255, 255, 0.3);
+            $whiteOpacity50: rgba(255, 255, 255, 0.5);
+            $blackOpacity30: rgba(0,0,0, 0.3);
+            $halfBlack: rgba(0,0,0, 0.5);
+            $whiteOpacity20: rgba(255, 255, 255, 0.2);
+
+
+// SHADOWS 
+
+    $sectionBoxShadow: 0px 0px 6px 0px $halfBlack;
+    $promoItemShadow: 0px 0px 10px 0px $blackOpacity30;
+    $newsHeadingShadow: 2px 2px 2px 0px $blackOpacity30;
+    $textShadow: 1px 1px 1px $blackOpacity30;
+    $iconShadow: 0px 0px 10px $blackOpacity30;
+    $btnShadow: 6px 6px 6px 0px $blackOpacity30;

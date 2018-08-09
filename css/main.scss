@@ -1,0 +1,232 @@
+@import './sass/variables';
+@import './sass/mixins';
+@import './sass/placeholders';
+@import './sass/fonts';
+
+
+
+// RE-USABLE CLASSES 
+
+    .float-left {
+        float: left;
+    }
+
+    .float-right {
+        float: right;
+    }
+
+// END OF RE-USABLE CLASSES
+
+.headerSection{ // Header section
+   
+    background: url('../../img/bg.jpg');
+    background-position: 50% 0;
+    background-size: cover;
+    position: relative;
+    @extend %fontRegular;
+    font-size: 18px;
+
+    &:before {
+            @extend %overlayOfElement;
+            background: $blackOpacity30;
+        }
+    .slider {
+        .slider-elements {
+            @include respond-to(mobile) { text-align: center; }
+            button.flickity-button.flickity-prev-next-button {
+                @include respond-to(mobile) { display: none; }
+                &.previous { left:-50px; }
+                &.next { right: -30px; }
+                .flickity-button-icon {
+                    fill: $white;
+                }
+            }
+
+            @extend %centerTransform;
+            .carousel-cell {
+                width: 100%;
+            }
+
+        } 
+        i.iconMain { 
+            font-size: 250px;
+            color: $white;
+            text-shadow: $iconShadow;
+        }
+        .btn.btn-slider {
+            @include line-object-height(48px);
+            @include boxshadow($btnShadow);
+            @extend %fontRegularNormal;
+            background: $orange;
+            padding: $reset 20px;
+        }
+    }
+    .navbarWrapper {
+        width: 100%;
+        height: $seventy;
+        background: $halfBlack;
+        
+        .navbar {
+            a {
+                color: inherit;
+                padding: 0 15px;
+                @include line-object-height(70px);
+                background: inherit;
+
+                i { line-height: $seventy; }
+            }
+            .open > .dropdown-menu {
+                border: none;
+                padding: $reset;
+                background: $halfBlack;
+
+                    li:hover { background: $whiteOpacity20; }
+                }
+            div#hamburgerMenu { 
+                &.collapse.in, &.collapsing {
+                    @extend %menuOpened;
+                }
+             }
+            .navbar-header, #languageChoose { display: table; }
+            }
+        }       
+} // End of header section
+
+section, footer {
+    h6 { padding-bottom: 20px; }
+    p { margin: $reset; }
+}
+section { 
+    @extend %sectionStyle ;
+    h1.title { @extend %sectionHeadings; }
+    p { @extend %fontParagraph; }
+}
+section { // Sections' style
+    &.promo {
+            .promoItem {
+                @extend %promoItem;
+            }
+    }
+    &.team {
+        background: $orange;
+        h4 { @extend %sectionH4; }
+        .personAbout img {
+            border-radius: 50%;
+            background: $white;
+            max-width: 75%;
+            padding: 7px;
+            border: 1px solid $lightGray;
+        }
+    }
+    &.news {
+        h1 {
+            @extend %viewMaxTabletCenter;
+            color: $gray;
+        }
+        .more {
+            padding-top: 20px;
+            
+            a { @extend %fontMediumNewsLink; }
+        }
+    }
+    &.clients {
+        background: $almostWhite;
+        .flickity-button-icon { fill: $orange; }
+        h1 { color: $orange; text-shadow: $textShadow}
+        .clientItem {
+            i { @extend %clientIcon; }
+            h5 {
+                @extend %clientName;
+                padding-bottom: 24px;
+            }
+        }
+    }
+    
+} // End of sections' style 
+
+footer { // Footer 
+    background: $spaceGray;
+    padding-top: 32px;
+
+    h6{ 
+        @extend %fontMediumSmall;
+        margin: reset;
+    }
+    ul {
+        padding-left: 20px;
+        li {
+            @extend %fontLightSmall;
+            line-height: 38px;
+        }
+    }
+    .iconsBlock {
+        padding: $reset;
+        @extend %viewMaxTabletCenter;
+            .footerText {
+                color: $whiteOpacity30;
+                @extend %fontRegularSmall;
+            }
+            i {
+                padding-right: 2px;
+                color: $whiteOpacity30;
+            }
+            .leftBlock, .rightBlock {padding: $reset}
+            .leftBlock i { font-size: 52px; }
+            .rightBlock i { font-size: 48px; }
+        }
+
+    .copyrightBlock {
+        margin-top: 20px;
+        background: $black;
+        text-transform: capitalize;
+        color: $whiteOpacity50;
+        @extend %fontRegularNormal;
+        
+        @include respond-to(tablet-desktop) {
+            @include line-object-height(70px);
+        }
+        @include respond-to(mobile) {
+            @include line-object-height(92px);
+        }
+    }
+} // End of the footer
+
+
+//    It's time to do some D.R.Y in made code.
+.team {
+    h1.title, h4 {
+        text-shadow: $textShadow;
+    }
+}
+.carousel {
+    .carousel-control {
+        background: none;
+        opacity: 1;
+        i {
+        @extend %verticalCenter;
+        @extend %carouselControls;
+        }
+    }
+}
+
+
+.flickity-page-dots  {
+    padding: 20px;
+    .dot {
+        background: $white;
+        opacity: .5;
+    }
+}
+.headerSection, .headerSection .navbar, .team h1.title, .team h4, footer h6, footer ul { color: $white; }
+
+footer .copyrightBlock, .promo, .team,  .clients  { text-align: center; }
+
+
+@include respond-to(mobile-tablet) {
+    .navbarWrapper .navbar-nav>li { float: none; }
+    .navbar-toggle { display: block; } 
+
+}
+@include respond-to(desktop) {
+    .collapse { display: block; }
+}

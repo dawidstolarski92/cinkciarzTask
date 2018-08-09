@@ -1,0 +1,57 @@
+@import 'variables';
+
+// MIXIN WHICH IMPORTS FONTS TO OUR PROJECT
+
+  @mixin font-face($style-name, $file, $family, $font-weight) {
+    $filepath: "../../fonts/" + $family + "/" + $file;
+    @font-face {
+        font-family: "#{$style-name}";
+        font-weight: $font-weight;
+        src: url($filepath + ".ttf")  format('truetype');
+    }
+  }
+// MIXIN WITH MEDIA QUERY MIXIN
+
+  @mixin respond-to($media) {
+      @if $media == mobile {
+        @media only screen and (max-width: $break-small) { @content; }
+      }
+      @else if $media == mobile-tablet {
+          @media only screen and (max-width: $break-tablet) { @content; }
+        }
+      @else if $media == tablet {
+        @media only screen and (min-width: $break-small + 1) and (max-width: $break-tablet) { @content; }
+      }
+      @else if $media == tablet-desktop {
+          @media only screen and (min-width: $break-small + 1) { @content; }
+        }
+      @else if $media == desktop {
+        @media only screen and (min-width: $break-tablet + 1) { @content; }
+      }
+    }
+
+// MIXIN TO GENERATE HEIGHT AN LINE-HEIGHT OF THE ELEMENT
+  @mixin line-object-height($height) {
+        height: $height;
+        line-height: $height;      
+  }
+
+// MIXIN WHICH IS GENERATING THE BOX-SHADOW OF THE ELEMENT
+  @mixin boxshadow($shadow){
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+
+// MIXING WHICH IS SETTING UP THE COLORS OF THE PROMO ITEMS
+  @mixin promoItemColors() {
+      @for $i from 1 through 3 {
+          @if $i == 1 {
+                &:nth-child(#{$i}), &:nth-child(#{$i + 3}) { color: $orange} 
+          } @else if $i == 2 {
+                &:nth-child(#{$i}), &:nth-child(#{$i + 3}) { color: $limeGreen}
+          } @else if $i == 3 {
+                &:nth-child(#{$i}), &:nth-child(#{$i + 3}) { color: $red}
+          }
+      }
+  }
