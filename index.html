@@ -76,11 +76,7 @@
                             </div><!-- /.container-fluid -->
                             </nav>
                 </div>
-            
                 <div class="slider">
-                        
-                               
-                            
                                 <!-- Wrapper for slides -->
                                 
                                     
@@ -128,22 +124,11 @@
                                                 <div class = 'btn btn-slider'>Dowiedz się więcej <i class="fas fa-long-arrow-alt-right"></i> </div>
                                         </div>
                                   </div>
-
                               </div>
                             </div>
-                                </div>
-                              
-                            
-                                
-                              </div>
-                            
-                        
-                              
-
-
-                            
+                        </div>
+                    </div>      
                 </div>
-            </div>
         </header>
         
         
@@ -363,21 +348,21 @@
                     <p> 2017. Wszystkie prawa zastrzezone.</p>
                 </div>
         </footer>
+        <script>
+                $('.main-carousel').flickity({
+                        // options
+                        cellAlign: 'left',
+                        autoPlay: 5000,
+                        contain: true
+                });
+                $('.clientCarousel').flickity({
+                        // options
+                        cellAlign: 'left',
+                        wrapAround: true,
+                        pageDots: false,
+                        autoPlay: 1500,
+                        contain: true
+                });
+            </script>
     </body>
-    <script>
-    $('.main-carousel').flickity({
-            // options
-            cellAlign: 'left',
-            autoPlay: 5000,
-            contain: true
-    });
-    $('.clientCarousel').flickity({
-            // options
-            cellAlign: 'left',
-            wrapAround: true,
-            pageDots: false,
-            autoPlay: 1500,
-            contain: true
-    });
-</script>
 </html>
