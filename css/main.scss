@@ -32,6 +32,7 @@
         }
     .slider {
         .slider-elements {
+            padding: $reset;
             @include respond-to(mobile) { text-align: center; }
             button.flickity-button.flickity-prev-next-button {
                 @include respond-to(mobile) { display: none; }
@@ -67,6 +68,15 @@
         background: $halfBlack;
         
         .navbar {
+                button.navbar-toggler {
+                    line-height: 67px;
+                    border: none;
+                    background:  none;
+                    &.focus {
+                        border: none; outline: none; 
+                    }
+                }
+                ul.nav.navbar-nav.navbar-right { margin: 0 -15px; }
             a {
                 color: inherit;
                 padding: 0 15px;
@@ -230,3 +240,4 @@ footer .copyrightBlock, .promo, .team,  .clients  { text-align: center; }
 @include respond-to(desktop) {
     .collapse { display: block; }
 }
+

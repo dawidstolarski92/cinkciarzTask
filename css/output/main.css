@@ -184,6 +184,9 @@ section.clients .clientItem i {
 .headerSection:before {
   background: rgba(0, 0, 0, 0.3);
 }
+.headerSection .slider .slider-elements {
+  padding: 0;
+}
 @media only screen and (max-width: 767px) {
   .headerSection .slider .slider-elements {
     text-align: center;
@@ -224,6 +227,18 @@ section.clients .clientItem i {
   width: 100%;
   height: 70px;
   background: rgba(0, 0, 0, 0.5);
+}
+.headerSection .navbarWrapper .navbar button.navbar-toggler {
+  line-height: 67px;
+  border: none;
+  background: none;
+}
+.headerSection .navbarWrapper .navbar button.navbar-toggler.focus {
+  border: none;
+  outline: none;
+}
+.headerSection .navbarWrapper .navbar ul.nav.navbar-nav.navbar-right {
+  margin: 0 -15px;
 }
 .headerSection .navbarWrapper .navbar a {
   color: inherit;
