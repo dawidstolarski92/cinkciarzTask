@@ -69,6 +69,7 @@
         
         .navbar {
                 button.navbar-toggler {
+                    @include respond-to(desktop) { display: none }
                     line-height: 67px;
                     border: none;
                     background:  none;
@@ -157,7 +158,25 @@ section { // Sections' style
 footer { // Footer 
     background: $spaceGray;
     padding-top: 32px;
-
+    .container {
+        position: relative;
+    .backTopWrapper {
+        position: absolute;
+        @extend %fontRegularMedium;
+        line-height: 52px;
+        right: $reset;
+        color: $whiteOpacity30;
+        @include respond-to(mobile) { top: 20px; right: 15px; }
+        @include respond-to(tablet) { bottom: -90px; }
+        @include respond-to(desktop) { top: 15px }
+        }
+        p { 
+            @include respond-to(mobile-tablet) { display: none; } 
+            padding-right: 20px;
+        }
+        p, .backBtn { float: left }
+        .backBtn i { font-size: 52px; }
+    }
     h6{ 
         @extend %fontMediumSmall;
         margin: reset;
@@ -191,15 +210,15 @@ footer { // Footer
         text-transform: capitalize;
         color: $whiteOpacity50;
         @extend %fontRegularNormal;
-        
         @include respond-to(tablet-desktop) {
-            @include line-object-height(70px);
-        }
+                @include line-object-height(70px);
+            }
         @include respond-to(mobile) {
-            @include line-object-height(92px);
+                @include line-object-height(92px);
+            }
         }
     }
-} // End of the footer
+// End of the footer
 
 
 //    It's time to do some D.R.Y in made code.

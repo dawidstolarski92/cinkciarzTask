@@ -1,4 +1,4 @@
-.headerSection, section.clients .clientItem h5, section p, section.team h4, section h1.title, section.promo .promoItem h1.promoItemHead, footer .copyrightBlock, .headerSection .slider .btn.btn-slider, footer .iconsBlock .footerText {
+.headerSection, section.clients .clientItem h5, section p, section.team h4, section h1.title, section.promo .promoItem h1.promoItemHead, footer .container .backTopWrapper, footer .copyrightBlock, .headerSection .slider .btn.btn-slider, footer .iconsBlock .footerText {
   font-family: "Ubuntu";
   font-weight: 400;
 }
@@ -25,7 +25,7 @@ footer .copyrightBlock, .headerSection .slider .btn.btn-slider {
   font-size: 18px;
 }
 
-section.team h4, section.clients .clientItem h5, section.news .more a {
+section.team h4, section.clients .clientItem h5, section.news .more a, footer .container .backTopWrapper {
   font-size: 24px;
 }
 
@@ -233,6 +233,11 @@ section.clients .clientItem i {
   border: none;
   background: none;
 }
+@media only screen and (min-width: 992px) {
+  .headerSection .navbarWrapper .navbar button.navbar-toggler {
+    display: none;
+  }
+}
 .headerSection .navbarWrapper .navbar button.navbar-toggler.focus {
   border: none;
   outline: none;
@@ -302,6 +307,45 @@ section.clients .clientItem h5 {
 footer {
   background: #444;
   padding-top: 32px;
+}
+footer .container {
+  position: relative;
+}
+footer .container .backTopWrapper {
+  position: absolute;
+  line-height: 52px;
+  right: 0;
+  color: rgba(255, 255, 255, 0.3);
+}
+@media only screen and (max-width: 767px) {
+  footer .container .backTopWrapper {
+    top: 20px;
+    right: 15px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  footer .container .backTopWrapper {
+    bottom: -90px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  footer .container .backTopWrapper {
+    top: 15px;
+  }
+}
+footer .container p {
+  padding-right: 20px;
+}
+@media only screen and (max-width: 991px) {
+  footer .container p {
+    display: none;
+  }
+}
+footer .container p, footer .container .backBtn {
+  float: left;
+}
+footer .container .backBtn i {
+  font-size: 52px;
 }
 footer h6 {
   margin: reset;

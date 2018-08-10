@@ -63,6 +63,10 @@
             @extend %fontRegular;
             @extend %fontNormalSize;
         }
+        %fontRegularMedium {
+            @extend %fontRegular;
+            @extend %fontMediumSize;
+        }
         %fontRegularBig {
             @extend %fontRegular;
             @extend %fontBigSize;
