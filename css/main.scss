@@ -73,8 +73,8 @@
                     line-height: 67px;
                     border: none;
                     background:  none;
-                    &.focus {
-                        border: none; outline: none; 
+                    &:focus {
+                        outline: none; 
                     }
                 }
                 ul.nav.navbar-nav.navbar-right { margin: 0 -15px; }

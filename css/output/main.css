@@ -238,8 +238,7 @@ section.clients .clientItem i {
     display: none;
   }
 }
-.headerSection .navbarWrapper .navbar button.navbar-toggler.focus {
-  border: none;
+.headerSection .navbarWrapper .navbar button.navbar-toggler:focus {
   outline: none;
 }
 .headerSection .navbarWrapper .navbar ul.nav.navbar-nav.navbar-right {
